@@ -34,7 +34,7 @@ function ChooseMode(props) {
             }
         })
             .then(function (response) {
-                return axios.post('http://localhost:5000/search', {
+                return axios.post('https://spotify-generator-backend.herokuapp.com/search', {
                     searchObject: response.data
                 })
                     .catch(function (error) {
@@ -96,7 +96,7 @@ function ChooseMode(props) {
                 }
             })
                 .then(function (response) {
-                    return axios.post('http://localhost:5000/trackdata', {
+                    return axios.post('https://spotify-generator-backend.herokuapp.com/trackdata', {
                         trackObject: response.data
                     })
                         .catch(function (error) {
