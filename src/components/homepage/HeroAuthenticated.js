@@ -26,14 +26,14 @@ function HeroAuthenticated() {
         data: {
           grant_type: "authorization_code",
           code: code,
-          redirect_uri: 'http://localhost:3000/authenticated',
+          redirect_uri: 'https://master.d15ejmho533sz3.amplifyapp.com/authenticated',
           client_id: 'f0c3aa26b442470db2737973a26efc0a',
           client_secret: '08760bf9ddcb40a199d1419291a73942'
         },
         data: qs.stringify({
           grant_type: "authorization_code",
           code: code,
-          redirect_uri: 'http://localhost:3000/authenticated',
+          redirect_uri: 'https://master.d15ejmho533sz3.amplifyapp.com/authenticated',
           client_id: 'f0c3aa26b442470db2737973a26efc0a',
           client_secret: '08760bf9ddcb40a199d1419291a73942'
         }),
@@ -51,7 +51,7 @@ function HeroAuthenticated() {
         })
     } else {
       // TODO: replace url with final url after deploying
-      window.location.replace("http://localhost:3000")
+      window.location.replace("https://master.d15ejmho533sz3.amplifyapp.com/")
     }
   }, [])
 
