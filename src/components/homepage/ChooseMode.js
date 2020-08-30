@@ -172,7 +172,7 @@ function ChooseMode(props) {
             }
         })
             .then(function (response) {
-                return axios.post('http://localhost:5000/recommendations', {
+                return axios.post('https://spotify-generator-backend.herokuapp.com/recommendations', {
                     recObject: response.data,
                     numSongs: numSongs
                 })
