@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap');
 /* COLOR SCHEME
 black: #182628
 main background: 65CCB8
@@ -6,9 +7,22 @@ background greener: 3B945E
 white: F2F2F2
 */
 
+/* COLOR SCHEME
+5680E9
+84CEEB
+5AB9EA
+C1C8E4
+8860D0
+*/
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
 /* NAVBAR */
+
 .navbar.navbar-light.bg-light {
-    background-color: #182628!important;
+    background-color: #24305e!important;
 }
 
 .navbar.navbar-light.bg-light .navbar-brand {
@@ -24,8 +38,9 @@ white: F2F2F2
 }
 
 /* HERO */
+
 .hero-row {
-    background-color: #57BA98;
+    background-color: #A8D0E6;
     height: 600px;
 }
 
@@ -37,20 +52,20 @@ white: F2F2F2
 .hero-paragraph {
     margin-left: 40px;
     margin-top: 20px;
-    color: #f2f2f2;
+    color: #fff;
     font-size: 20px;
 }
 
 .hero-button {
     margin-left: 40px;
-    background-color: #f2f2f2;
+    background-color: #F76C6C;
     outline: none;
     border: none;
     font-size: 20px;
     padding: 8px;
     padding-left: 15px;
     padding-right: 15px;
-    color: #182628;
+    color: #fff;
 }
 
 .hero-button:focus {
@@ -58,17 +73,17 @@ white: F2F2F2
 }
 
 .hero-left h1 {
-    color: #f2f2f2;
+    color: #fff;
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
     .hero-right {
         visibility: hidden;
     }
 }
 
 .hero-right {
-    background: #182628;
+    background: #24305e;
     max-width: 50vw;
     margin: 0 auto;
     text-align: center;
@@ -131,6 +146,7 @@ white: F2F2F2
 }
 
 /* HOMEPAGEMAIN */
+
 .favorite-playlists-header {
     margin-left: 40px;
     margin-top: 15px;
@@ -141,11 +157,13 @@ white: F2F2F2
 }
 
 /* HOMEPAGEMAINAUTHENTICATED */
+
 .home-page-authenticated-master-container {
     background-color: #f1f1f1;
 }
 
 /* HEROAUTHENTICATED */
+
 .mode-toggle {
     padding-top: 6.5vh;
     text-align: center;
@@ -167,7 +185,7 @@ white: F2F2F2
 
 .mode-toggle button.active-mode {
     color: #f1f1f1;
-    background-color:  #1db954;
+    background-color: #1db954;
 }
 
 .mode-toggle button:hover {
@@ -177,6 +195,7 @@ white: F2F2F2
 }
 
 /* CHOOSEMODE */
+
 .choose-mode-master-container {
     text-align: center;
 }

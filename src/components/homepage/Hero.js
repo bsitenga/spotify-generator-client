@@ -12,8 +12,8 @@ function Hero() {
 		'?response_type=code' +
 		'&client_id=' +
 		clientID +
-		'&redirect_uri=https://master.d15ejmho533sz3.amplifyapp.com/authenticated' + 
-		'&scope=playlist-modify-public';;
+		'&redirect_uri=https://master.d15ejmho533sz3.amplifyapp.com/authenticated' +
+		'&scope=playlist-modify-public';
 
 	return (
 		<div className="hero-master-container">
@@ -29,7 +29,7 @@ function Hero() {
 							</p>
 							<a href={authEndpoint}>
 								<button className="hero-button">
-									<i className="fab fa-spotify" /> Login with Spotify hehexd
+									<i className="fab fa-spotify" /> Login with Spotify
 								</button>
 							</a>
 						</div>
