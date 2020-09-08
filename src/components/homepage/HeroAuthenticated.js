@@ -9,12 +9,12 @@ function HeroAuthenticated() {
   const [userMode, setUserMode] = useState(2);
 
   const clientID = 'f0c3aa26b442470db2737973a26efc0a';
-	const authEndpoint =
-		'https://accounts.spotify.com/authorize' +
-		'?response_type=code' +
-		'&client_id=' +
-		clientID +
-    '&redirect_uri=https://master.d15ejmho533sz3.amplifyapp.com/authenticated' +
+  const authEndpoint =
+    'https://accounts.spotify.com/authorize' +
+    '?response_type=code' +
+    '&client_id=' +
+    clientID +
+    '&redirect_uri=http://localhost:3000/authenticated' +
     '&scope=playlist-modify-public';
 
   useEffect(() => {
@@ -26,14 +26,14 @@ function HeroAuthenticated() {
         data: {
           grant_type: "authorization_code",
           code: code,
-          redirect_uri: 'https://master.d15ejmho533sz3.amplifyapp.com/authenticated',
+          redirect_uri: 'http://localhost:3000/authenticated',
           client_id: 'f0c3aa26b442470db2737973a26efc0a',
           client_secret: '08760bf9ddcb40a199d1419291a73942'
         },
         data: qs.stringify({
           grant_type: "authorization_code",
           code: code,
-          redirect_uri: 'https://master.d15ejmho533sz3.amplifyapp.com/authenticated',
+          redirect_uri: 'http://localhost:3000/authenticated',
           client_id: 'f0c3aa26b442470db2737973a26efc0a',
           client_secret: '08760bf9ddcb40a199d1419291a73942'
         }),
@@ -86,17 +86,19 @@ function HeroAuthenticated() {
 
   return (
     <div className="hero-authenticated">
-      {/* {accessToken ? AuthenticatedTokenPage() : LoadingError()} */}
       <div className="mode-toggle">
+        <div className="mode-toggle-header">
+          <h4>Modes</h4>
+        </div>
         <button onClick={() => setUserMode(1)} className={userMode === 1 ? "active-mode" : ""}
           style={{ borderRight: 'none', borderRadius: '7px 0px 0px 7px' }}>Your Playlists</button>
         <button onClick={() => setUserMode(2)} className={userMode === 2 ? "active-mode" : ""}>Choose Songs</button>
         <button onClick={() => setUserMode(3)} className={userMode === 3 ? "active-mode" : ""}
           style={{ borderLeft: 'none', borderRadius: '0px 7px 7px 0px' }}>Our Playlists</button>
       </div>
-      { userMode === 1 ? '' : ''}
-      { userMode === 2 ? <ChooseMode accessToken={accessToken} /> : ''}
-      { userMode === 3 ? '' : ''}
+      {userMode === 1 ? '' : ''}
+      {userMode === 2 ? <ChooseMode accessToken={accessToken} /> : ''}
+      {userMode === 3 ? '' : ''}
     </div>
   );
 }

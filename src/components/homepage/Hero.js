@@ -12,7 +12,7 @@ function Hero() {
 		'?response_type=code' +
 		'&client_id=' +
 		clientID +
-		'&redirect_uri=https://master.d15ejmho533sz3.amplifyapp.com/authenticated' +
+		'&redirect_uri=http://localhost:3000/authenticated' + 
 		'&scope=playlist-modify-public';
 
 	return (

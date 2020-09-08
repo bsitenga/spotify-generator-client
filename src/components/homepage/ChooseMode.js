@@ -246,6 +246,7 @@ function ChooseMode(props) {
         <div className="ungenerated-area">
             {!finished ?
                 <div className="search-area">
+                    <img src="/Spotter.png" />
                     <input type="text"
                         placeholder="Search for a track"
                         value={trackInput}

@@ -23,6 +23,7 @@ body {
 
 .navbar.navbar-light.bg-light {
     background-color: #24305e!important;
+    height: 55px;
 }
 
 .navbar.navbar-light.bg-light .navbar-brand {
@@ -165,18 +166,37 @@ body {
 /* HEROAUTHENTICATED */
 
 .mode-toggle {
-    padding-top: 6.5vh;
-    text-align: center;
+    display: inline-block;
+    width: 20vw;
+    background-color: #a8d0e6;
+    height: calc(100vh - 55px);
+    vertical-align: top;
+}
+
+.mode-toggle-header {
+    color: #fff;
+    padding-left: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color:rgba(3,3,3,0.15);
+    margin-bottom: 1.5vh;
+}
+
+.mode-toggle-header h4 {
+    font-size: 2.5vw;
+    color: #F76C6C;;
 }
 
 .mode-toggle button {
-    font-size: max(1.7vw, 15px);
-    color: #1db954;
-    padding-left: .8vw;
-    padding-right: .8vw;
-    background-color: #f1f1f1;
-    border: 2px solid #1db954;
+    background: none;
     outline: none;
+    border: none;
+    display: block;
+    color: #fff;
+    font-size: 1.4vw;
+    padding-left: 3vw;
+    padding-bottom: 1.2vh;
+    font-weight: 500;
 }
 
 .mode-toggle button:focus {
@@ -184,20 +204,19 @@ body {
 }
 
 .mode-toggle button.active-mode {
-    color: #f1f1f1;
-    background-color: #1db954;
+    color: #F76C6C;;
 }
 
 .mode-toggle button:hover {
-    background-color: #1aa843;
-    color: #f1f1f1;
-    border-color: #17a540;
+    color: #24305e;
 }
 
 /* CHOOSEMODE */
 
 .choose-mode-master-container {
     text-align: center;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 .search-area {
