@@ -246,50 +246,53 @@ function ChooseMode(props) {
         <div className="ungenerated-area">
             {!finished ?
                 <div className="search-area">
-                    <img src="/Spotter.png" />
-                    <input type="text"
-                        placeholder="Search for a track"
-                        value={trackInput}
-                        className="track-search"
-                        onKeyDown={e => handleEnter(e.key)}
-                        onChange={e => setTrackInput(e.target.value)}></input>
-                    <button onClick={() => searchForTrack()} className="search-area-button">Search</button>
-                    {searched ? <div className="search-results" style={searchResults ? { textAlign: 'left' } : { textAlign: 'center' }} >
-                        {searchResults ? <div>{searchResults.trackIDs.map((trackID, index) => {
-                            let trackImg = searchResults.images[index];
-                            let trackName = searchResults.name[index];
-                            let trackArtist = searchResults.artists[index];
-                            let preview = searchResults.previews[index];
-                            return <div key={index} className='track-result' onClick={() => addTrack(trackID, trackImg, trackName, trackArtist, preview)}>
-                                <img src={trackImg} />
-                                <span className="track-desc">
-                                    <h4>{trackName.substring(0, 40)}</h4>
-                                    <p>{trackArtist}</p>
-                                </span>
-                                <span className="add-track">
-                                    Add+
+                    <img className="logo" src="/Spotter.png" />
+                    <div className="searching-area">
+                        <input type="text"
+                            placeholder="Search for a track"
+                            value={trackInput}
+                            className="track-search"
+                            onKeyDown={e => handleEnter(e.key)}
+                            onChange={e => setTrackInput(e.target.value)}>
+                        </input>
+                        <button onClick={() => searchForTrack()} className="search-area-button">Search</button>
+                        {searched ? <div className="search-results" style={searchResults ? { textAlign: 'left' } : { textAlign: 'center' }} >
+                            {searchResults ? <div>{searchResults.trackIDs.map((trackID, index) => {
+                                let trackImg = searchResults.images[index];
+                                let trackName = searchResults.name[index];
+                                let trackArtist = searchResults.artists[index];
+                                let preview = searchResults.previews[index];
+                                return <div key={index} className='track-result' onClick={() => addTrack(trackID, trackImg, trackName, trackArtist, preview)}>
+                                    <img src={trackImg} />
+                                    <span className="track-desc">
+                                        <h4>{trackName.substring(0, 40)}</h4>
+                                        <p>{trackArtist}</p>
+                                    </span>
+                                    <span className="add-track">
+                                        Add+
                         </span>
-                            </div>
-                        })}</div>
-                            :
-                            <Spinner style={{ color: '#1db954', margin: '2vh auto 2vh' }} animation="border" role="status"></Spinner>}
-                    </div> : ''}
-                    <div className="added-results">
-                        <p style={{ color: "#777" }}>{errorMessage}</p>
-                        <h5>Added Tracks</h5>
-                        <hr className="choose-divider"></hr>
-                        {tracks.map((item, index) => {
-                            return <div key={index} className='added-track'>
-                                <img src={item.image} />
-                                <span className="added-track-desc">
-                                    <h4>{item.name.substring(0, 32)}</h4>
-                                    <p>{item.artist}</p>
-                                </span>
-                                <audio id={"player" + index} src={item.preview} ></audio>
-                                {item.preview ? <button className="play-button" onClick={() => playAudio(index)} >Play/Pause</button> : ""}
-                            </div>
-                        })}
-                        {tracks[0] ? <button onClick={() => setFinished(true)}>Finished</button> : <p>Add a track!</p>}
+                                </div>
+                            })}</div>
+                                :
+                                <Spinner style={{ color: '#1db954', margin: '2vh auto 2vh' }} animation="border" role="status"></Spinner>}
+                        </div> : ''}
+                        <div className="added-results">
+                            <p style={{ color: "#777" }}>{errorMessage}</p>
+                            <h5>Added Tracks</h5>
+                            <hr className="choose-divider"></hr>
+                            {tracks.map((item, index) => {
+                                return <div key={index} className='added-track'>
+                                    <img src={item.image} />
+                                    <span className="added-track-desc">
+                                        <h4>{item.name.substring(0, 32)}</h4>
+                                        <p>{item.artist}</p>
+                                    </span>
+                                    <audio id={"player" + index} src={item.preview} ></audio>
+                                    {item.preview ? <button className="play-button" onClick={() => playAudio(index)} >Play/Pause</button> : ""}
+                                </div>
+                            })}
+                            {tracks[0] ? <button onClick={() => setFinished(true)}>Finished</button> : <p>Add a track!</p>}
+                        </div>
                     </div>
                 </div> : ""}
             {finished ?

@@ -165,9 +165,19 @@ body {
 
 /* HEROAUTHENTICATED */
 
+.hero-authenticated .hero-authenticated-left {
+    padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .hero-authenticated .hero-authenticated-left {
+        display: none;
+    }
+}
+
 .mode-toggle {
     display: inline-block;
-    width: 20vw;
+    width: 100%;
     background-color: #a8d0e6;
     height: calc(100vh - 55px);
     vertical-align: top;
@@ -216,7 +226,12 @@ body {
 .choose-mode-master-container {
     text-align: center;
     display: inline-block;
-    margin-left: 10px;
+    width: 100%;
+}
+
+.choose-mode-master-container .logo {
+    width: 10vw;
+    padding-top: 5vh;
 }
 
 .search-area {

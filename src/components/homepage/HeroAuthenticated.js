@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../../App.css';
 import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import qs from 'qs';
 import ChooseMode from './ChooseMode.js';
 
@@ -86,19 +89,27 @@ function HeroAuthenticated() {
 
   return (
     <div className="hero-authenticated">
-      <div className="mode-toggle">
-        <div className="mode-toggle-header">
-          <h4>Modes</h4>
-        </div>
-        <button onClick={() => setUserMode(1)} className={userMode === 1 ? "active-mode" : ""}
-          style={{ borderRight: 'none', borderRadius: '7px 0px 0px 7px' }}>Your Playlists</button>
-        <button onClick={() => setUserMode(2)} className={userMode === 2 ? "active-mode" : ""}>Choose Songs</button>
-        <button onClick={() => setUserMode(3)} className={userMode === 3 ? "active-mode" : ""}
-          style={{ borderLeft: 'none', borderRadius: '0px 7px 7px 0px' }}>Our Playlists</button>
-      </div>
-      {userMode === 1 ? '' : ''}
-      {userMode === 2 ? <ChooseMode accessToken={accessToken} /> : ''}
-      {userMode === 3 ? '' : ''}
+      <Container fluid>
+        <Row className="hero-authenticated-row">
+          <Col md={2} className="hero-authenticated-left">
+            <div className="mode-toggle">
+              <div className="mode-toggle-header">
+                <h4>Modes</h4>
+              </div>
+              <button onClick={() => setUserMode(1)} className={userMode === 1 ? "active-mode" : ""}
+                style={{ borderRight: 'none', borderRadius: '7px 0px 0px 7px' }}>Your Playlists</button>
+              <button onClick={() => setUserMode(2)} className={userMode === 2 ? "active-mode" : ""}>Choose Songs</button>
+              <button onClick={() => setUserMode(3)} className={userMode === 3 ? "active-mode" : ""}
+                style={{ borderLeft: 'none', borderRadius: '0px 7px 7px 0px' }}>Our Playlists</button>
+            </div>
+          </Col>
+          <Col md={10}>
+            {userMode === 1 ? '' : ''}
+            {userMode === 2 ? <ChooseMode accessToken={accessToken} /> : ''}
+            {userMode === 3 ? '' : ''}
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
