@@ -413,6 +413,19 @@ hr.choose-divider {
     background-color: #F76C6C;
     border: #F76C6C;
     border-radius: 50%;
+    outline: none;
+}
+
+.button-progress button:focus {
+    outline: none;
+}
+
+.button-progress .active-button {
+    border: .18vw solid #24305e;
+}
+
+.button-progress .inactive-button {
+    opacity: .7;
 }
 
 .slider-master {
