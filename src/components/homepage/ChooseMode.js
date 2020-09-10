@@ -274,7 +274,7 @@ function ChooseMode(props) {
                                 </div>
                             })}</div>
                                 :
-                                <Spinner style={{ color: '#1db954', margin: '2vh auto 2vh' }} animation="border" role="status"></Spinner>}
+                                <Spinner style={{ color: '#F76C6C', margin: '2vh auto 2vh' }} animation="border" role="status"></Spinner>}
                         </div> : ''}
                         <div className="added-results">
                             <p style={{ color: "#777" }}>{errorMessage}</p>
@@ -291,14 +291,21 @@ function ChooseMode(props) {
                                     {item.preview ? <button className="play-button" onClick={() => playAudio(index)} >Play/Pause</button> : ""}
                                 </div>
                             })}
-                            {tracks[0] ? <button onClick={() => setFinished(true)}>Finished</button> : <p>Add a track!</p>}
+                            {tracks[0] ? <button onClick={() => setFinished(true)}>Next</button> : <p style={{color: "#24305e"}}>Add a track!</p>}
                         </div>
                     </div>
                 </div> : ""}
             {finished ?
                 <div className="set-filters">
-                    <h3>Set Filters</h3>
-                    <hr className="choose-divider"></hr>
+                    <div className="button-progress">
+                        <button>#</button>
+                        <button>#</button>
+                        <button>#</button>
+                        <button>#</button>
+                        <button>#</button>
+                        <button>#</button>
+                        <button>#</button>
+                    </div>
                     <div className="slider-master">
                         <label htmlFor="acousticness-slider">Acousticness - Average Value: {finished ? songVals[0].toString().substring(1, 4) : ""}</label>
                         <input className="acousticness-slider slider" type="range" min="0" max="100" value={acousticness * 100} onChange={(e) => setAcousticness(e.target.value / 100)}></input>

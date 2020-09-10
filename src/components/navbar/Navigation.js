@@ -8,7 +8,7 @@ function Navigation() {
 	return (
 		<div className="navbar-master-container">
 			<Navbar bg="light">
-				<Navbar.Brand href="/"><Link to="/">Epic App</Link></Navbar.Brand>
+				<Navbar.Brand href="/"><Link to="/">Curate</Link></Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto">

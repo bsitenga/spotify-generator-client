@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap');
 /* COLOR SCHEME
-black: #182628
-main background: 65CCB8
-background darker: 57BA98
-background greener: 3B945E
-white: F2F2F2
-*/
-
-/* COLOR SCHEME
 5680E9
 84CEEB
 5AB9EA
@@ -154,13 +146,14 @@ body {
 }
 
 .home-page-master-container {
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
 }
 
 /* HOMEPAGEMAINAUTHENTICATED */
 
 .home-page-authenticated-master-container {
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
+    min-height: calc(100vh - 55px);
 }
 
 /* HEROAUTHENTICATED */
@@ -179,7 +172,8 @@ body {
     display: inline-block;
     width: 100%;
     background-color: #a8d0e6;
-    height: calc(100vh - 55px);
+    height: 100%;
+    min-height: calc(100vh - 55px);
     vertical-align: top;
 }
 
@@ -194,7 +188,7 @@ body {
 
 .mode-toggle-header h4 {
     font-size: 2.5vw;
-    color: #F76C6C;;
+    color: #24305e;
 }
 
 .mode-toggle button {
@@ -214,11 +208,11 @@ body {
 }
 
 .mode-toggle button.active-mode {
-    color: #F76C6C;;
+    color: #24305e;
 }
 
 .mode-toggle button:hover {
-    color: #24305e;
+    color: #F76C6C;
 }
 
 /* CHOOSEMODE */
@@ -325,6 +319,23 @@ body {
 .added-results h5 {
     margin-bottom: 3vh;
     font-size: 2.0vw;
+    color: #24305e;
+}
+
+.added-results button {
+    background-color: #F76C6C;
+    border: #F76C6C;
+    color: #fff;
+    font-size: 2vw;
+    padding-left: 1.5vw;
+    padding-right: 1.75vw;
+    padding-bottom: .2vw;
+    border-radius: 30px;
+}
+
+.added-results button:hover {
+    background-color: #E15151;
+    border: #E15151;
 }
 
 .added-track {
@@ -384,9 +395,24 @@ body {
 
 hr.choose-divider {
     width: 30vw;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    height: 2px;
+    background-color: #24305e;
+}
+
+.button-progress {
+    margin-top: 5vh;
+}
+
+.button-progress button {
+    margin-left: .5vw;
+    margin-right: .5vw;
+    height: 2vw;
+    width: 2vw;
+    font-size: 1vw;
+    color: #F76C6C;
+    background-color: #F76C6C;
+    border: #F76C6C;
+    border-radius: 50%;
 }
 
 .slider-master {
